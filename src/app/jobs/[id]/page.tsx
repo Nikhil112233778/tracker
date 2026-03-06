@@ -5,7 +5,7 @@ import { StatusPill } from '@/components/ui/StatusPill'
 import { ConversationTimeline } from '@/components/ConversationTimeline'
 import { JobDetailActions } from '@/components/JobDetailActions'
 import { formatRelativeTime } from '@/lib/utils'
-import type { JobWithDetails } from '@/lib/types'
+import type { Job, Conversation, Reminder } from '@/lib/types'
 
 async function getJobDetails(id: string) {
   try {
@@ -37,9 +37,9 @@ export default async function JobDetailPage({
   }
 
   const { job, conversations, reminder } = details as {
-    job: JobWithDetails['job']
-    conversations: JobWithDetails['conversations']
-    reminder: JobWithDetails['reminder']
+    job: Job
+    conversations: Conversation[]
+    reminder: Reminder | null
   }
 
   const lastContactDate = conversations[0]?.date || job.created_at
