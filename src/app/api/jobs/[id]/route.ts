@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import { jobs, conversations, reminders } from '@/lib/db/schema'
-import { eq, desc } from 'drizzle-orm'
+import { eq, desc, and } from 'drizzle-orm'
 
 // GET /api/jobs/[id]
 export async function GET(
@@ -37,8 +37,7 @@ export async function GET(
     const [reminder] = await db
       .select()
       .from(reminders)
-      .where(eq(reminders.job_id, jobId))
-      .where(eq(reminders.is_done, false))
+      .where(and(eq(reminders.job_id, jobId), eq(reminders.is_done, false)))
       .orderBy(desc(reminders.reminder_date))
       .limit(1)
 

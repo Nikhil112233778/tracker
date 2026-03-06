@@ -9,7 +9,13 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
     const dueOnly = searchParams.get('due') === 'true'
 
-    let query = db
+    const now = new Date().toISOString()
+
+    const whereConditions = dueOnly
+      ? and(eq(reminders.is_done, false), lte(reminders.reminder_date, now))
+      : eq(reminders.is_done, false)
+
+    const results = await db
       .select({
         reminder: reminders,
         company: jobs.company,
@@ -18,16 +24,7 @@ export async function GET(request: NextRequest) {
       })
       .from(reminders)
       .innerJoin(jobs, eq(reminders.job_id, jobs.id))
-      .where(eq(reminders.is_done, false))
-
-    if (dueOnly) {
-      const now = new Date().toISOString()
-      query = query.where(
-        and(eq(reminders.is_done, false), lte(reminders.reminder_date, now))
-      ) as any
-    }
-
-    const results = await query
+      .where(whereConditions)
 
     const remindersWithJobs = results.map((r) => ({
       ...r.reminder,
