@@ -6,15 +6,18 @@ import { ConversationTimeline } from '@/components/ConversationTimeline'
 import { JobDetailActions } from '@/components/JobDetailActions'
 import { formatRelativeTime } from '@/lib/utils'
 import type { Job, Conversation, Reminder } from '@/lib/types'
+import { headers } from 'next/headers'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
 async function getJobDetails(id: string) {
   try {
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+    const headersList = await headers()
+    const host = headersList.get('host') || 'localhost:3000'
+    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http'
+    const baseUrl = `${protocol}://${host}`
+
     const res = await fetch(`${baseUrl}/api/jobs/${id}`, {
       cache: 'no-store',
     })

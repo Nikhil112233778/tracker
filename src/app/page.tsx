@@ -4,15 +4,18 @@ import { EmptyState } from '@/components/EmptyState'
 import { DashboardNotifications } from '@/components/DashboardNotifications'
 import Link from 'next/link'
 import type { Job } from '@/lib/types'
+import { headers } from 'next/headers'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
 async function getJobs() {
   try {
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+    const headersList = await headers()
+    const host = headersList.get('host') || 'localhost:3000'
+    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http'
+    const baseUrl = `${protocol}://${host}`
+
     const res = await fetch(`${baseUrl}/api/jobs`, {
       cache: 'no-store',
     })

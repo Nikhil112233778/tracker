@@ -2,15 +2,18 @@ import Link from 'next/link'
 import { ReminderCard } from '@/components/ReminderCard'
 import { EmptyState } from '@/components/EmptyState'
 import { groupReminders, REMINDER_GROUP_COLORS, type ReminderGroup, type ReminderWithJob } from '@/lib/reminders'
+import { headers } from 'next/headers'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
 async function getReminders() {
   try {
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+    const headersList = await headers()
+    const host = headersList.get('host') || 'localhost:3000'
+    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http'
+    const baseUrl = `${protocol}://${host}`
+
     const res = await fetch(`${baseUrl}/api/reminders`, {
       cache: 'no-store',
     })
