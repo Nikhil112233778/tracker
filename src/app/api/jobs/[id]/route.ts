@@ -3,6 +3,9 @@ import { db } from '@/lib/db'
 import { jobs, conversations, reminders } from '@/lib/db/schema'
 import { eq, desc, and } from 'drizzle-orm'
 
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+
 // GET /api/jobs/[id]
 export async function GET(
   request: NextRequest,

@@ -3,6 +3,9 @@ import { db } from '@/lib/db'
 import { jobs, conversations } from '@/lib/db/schema'
 import { eq, desc } from 'drizzle-orm'
 
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+
 // GET /api/jobs?status=Applied
 export async function GET(request: NextRequest) {
   try {
