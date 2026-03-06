@@ -102,8 +102,8 @@ export function JobDetailActions({ jobId, hasReminder }: JobDetailActionsProps) 
 
   return (
     <>
-      {/* Fixed Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
+      {/* Fixed Bottom Bar - Above BottomNav */}
+      <div className="fixed bottom-20 left-0 right-0 bg-surface border-t border-border p-4">
         <div className="max-w-md mx-auto flex gap-3">
           <button
             onClick={() => setIsReminderSheetOpen(true)}
@@ -125,7 +125,7 @@ export function JobDetailActions({ jobId, hasReminder }: JobDetailActionsProps) 
         isOpen={isConvSheetOpen}
         onClose={() => setIsConvSheetOpen(false)}
       >
-        <h2 className="text-xl font-bold mb-4">Add Conversation</h2>
+        <h2 className="text-xl font-bold mb-4 text-text-primary">Add Conversation</h2>
         <form onSubmit={handleAddConversation} className="space-y-4">
           {/* Type selector */}
           <div>
@@ -139,7 +139,7 @@ export function JobDetailActions({ jobId, hasReminder }: JobDetailActionsProps) 
                   className={`py-2 px-3 rounded-lg text-sm font-medium transition-colors ${
                     convType === type
                       ? 'bg-accent text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      : 'bg-surface-hover text-text-primary hover:bg-border'
                   }`}
                 >
                   {type}
@@ -187,7 +187,7 @@ export function JobDetailActions({ jobId, hasReminder }: JobDetailActionsProps) 
         isOpen={isReminderSheetOpen}
         onClose={() => setIsReminderSheetOpen(false)}
       >
-        <h2 className="text-xl font-bold mb-4">
+        <h2 className="text-xl font-bold mb-4 text-text-primary">
           {hasReminder ? 'Update Reminder' : 'Set Reminder'}
         </h2>
         <form onSubmit={handleSetReminder} className="space-y-4">

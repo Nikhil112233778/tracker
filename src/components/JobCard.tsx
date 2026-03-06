@@ -39,10 +39,10 @@ export function JobCard({ job }: JobCardProps) {
 
   return (
     <>
-      <div className="card hover:bg-surface-hover transition-colors mb-3 relative group">
+      <div className="card hover:bg-surface-hover transition-colors mb-3 relative group cursor-pointer">
         <Link href={`/jobs/${job.id}`} className="absolute inset-0 z-0" />
 
-        <div className="flex gap-3 relative z-10">
+        <div className="flex gap-3 relative pointer-events-none">
           {/* Company Avatar */}
           <Avatar company={job.company} size="sm" />
 
@@ -65,7 +65,7 @@ export function JobCard({ job }: JobCardProps) {
                     setShowDeleteDialog(true)
                   }}
                   disabled={isDeleting}
-                  className="opacity-0 group-hover:opacity-100 p-2 hover:bg-red-500/20 rounded-lg transition-all relative z-20"
+                  className="opacity-0 group-hover:opacity-100 p-2 hover:bg-red-500/20 rounded-lg transition-all relative z-20 pointer-events-auto"
                   title="Delete job"
                 >
                   <svg

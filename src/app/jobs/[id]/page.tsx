@@ -4,6 +4,7 @@ import { Avatar } from '@/components/ui/Avatar'
 import { StatusPill } from '@/components/ui/StatusPill'
 import { ConversationTimeline } from '@/components/ConversationTimeline'
 import { JobDetailActions } from '@/components/JobDetailActions'
+import { BottomNav } from '@/components/BottomNav'
 import { formatRelativeTime } from '@/lib/utils'
 import type { Job, Conversation, Reminder } from '@/lib/types'
 import { headers } from 'next/headers'
@@ -32,13 +33,36 @@ async function getJobDetails(id: string) {
   }
 }
 
+async function getAllReminders() {
+  try {
+    const headersList = await headers()
+    const host = headersList.get('host') || 'localhost:3000'
+    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http'
+    const baseUrl = `${protocol}://${host}`
+
+    const res = await fetch(`${baseUrl}/api/reminders`, {
+      cache: 'no-store',
+    })
+
+    if (!res.ok) return []
+
+    const data = await res.json()
+    return data.success ? data.data : []
+  } catch (error) {
+    return []
+  }
+}
+
 export default async function JobDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>
 }) {
   const { id } = await params
-  const details = await getJobDetails(id)
+  const [details, allReminders] = await Promise.all([
+    getJobDetails(id),
+    getAllReminders(),
+  ])
 
   if (!details) {
     notFound()
@@ -53,7 +77,7 @@ export default async function JobDetailPage({
   const lastContactDate = conversations[0]?.date || job.created_at
 
   return (
-    <div className="min-h-screen bg-background pb-24">
+    <div className="min-h-screen bg-background pb-44">
       <div className="max-w-md mx-auto">
         {/* Top Bar */}
         <div className="sticky top-0 bg-background z-10 px-4 py-3 flex items-center justify-between border-b border-border">
@@ -224,6 +248,9 @@ export default async function JobDetailPage({
         {/* Fixed Bottom Actions */}
         <JobDetailActions jobId={parseInt(id)} hasReminder={!!reminder} />
       </div>
+
+      {/* Bottom Navigation */}
+      <BottomNav reminderCount={allReminders.length} />
     </div>
   )
 }

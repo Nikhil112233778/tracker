@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ReminderCard } from '@/components/ReminderCard'
 import { EmptyState } from '@/components/EmptyState'
+import { BottomNav } from '@/components/BottomNav'
 import { groupReminders, REMINDER_GROUP_COLORS, type ReminderGroup, type ReminderWithJob } from '@/lib/reminders'
 import { headers } from 'next/headers'
 
@@ -36,7 +37,7 @@ export default async function RemindersPage() {
   const groups: ReminderGroup[] = ['Overdue', 'Today', 'Tomorrow', 'This Week', 'Later']
 
   return (
-    <div className="min-h-screen bg-background pb-8">
+    <div className="min-h-screen bg-background pb-28">
       <div className="max-w-md mx-auto">
         {/* Header */}
         <div className="sticky top-0 bg-background z-10 px-4 py-3 flex items-center border-b border-border">
@@ -104,6 +105,9 @@ export default async function RemindersPage() {
           )}
         </div>
       </div>
+
+      {/* Bottom Navigation */}
+      <BottomNav reminderCount={reminders.length} />
     </div>
   )
 }
