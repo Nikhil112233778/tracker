@@ -5,20 +5,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#F6F5F0',
-        surface: '#FFFFFF',
+        background: '#0A0A0A',
+        surface: '#1A1A1A',
+        'surface-hover': '#252525',
+        border: '#2A2A2A',
         accent: {
-          DEFAULT: '#2563EB',
-          hover: '#1D4ED8'
+          DEFAULT: '#3B82F6',
+          hover: '#2563EB'
+        },
+        text: {
+          primary: '#FFFFFF',
+          secondary: '#A0A0A0',
+          muted: '#707070',
         },
         status: {
-          applied: { text: '#2563EB', bg: '#EEF2FF' },
-          inTouch: { text: '#16A34A', bg: '#F0FDF4' },
-          followUp: { text: '#D97706', bg: '#FFFBEB' },
-          interview: { text: '#8B5CF6', bg: '#F5F3FF' },
-          offer: { text: '#7C3AED', bg: '#F5F3FF' },
-          rejected: { text: '#DC2626', bg: '#FEF2F2' },
-          ghosted: { text: '#6B7280', bg: '#F3F4F6' },
+          applied: { text: '#60A5FA', bg: '#1E3A8A20' },
+          inTouch: { text: '#4ADE80', bg: '#16653420' },
+          followUp: { text: '#FBBF24', bg: '#78350F20' },
+          interview: { text: '#A78BFA', bg: '#5B21B620' },
+          offer: { text: '#C084FC', bg: '#6B21A820' },
+          rejected: { text: '#F87171', bg: '#7F1D1D20' },
+          ghosted: { text: '#9CA3AF', bg: '#37415120' },
         },
       },
       fontFamily: {
