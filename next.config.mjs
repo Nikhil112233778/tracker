@@ -4,13 +4,13 @@ const withSerwist = withSerwistInit({
   swSrc: 'src/app/sw.ts',
   swDest: 'public/sw.js',
   disable: process.env.NODE_ENV === 'development',
+  reloadOnOnline: true,
+  cacheOnNavigation: true,
 })
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Empty turbopack config to allow webpack config for production builds
-  turbopack: {},
-  // Webpack alias for libsql client compatibility (used in production builds)
+  // Webpack alias for libsql client compatibility
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.resolve.alias = {
@@ -19,6 +19,12 @@ const nextConfig = {
       }
     }
     return config
+  },
+  // Ensure API routes work correctly
+  experimental: {
+    serverActions: {
+      allowedOrigins: ['*'],
+    },
   },
 }
 
