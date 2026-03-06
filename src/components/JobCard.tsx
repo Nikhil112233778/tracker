@@ -21,18 +21,15 @@ export function JobCard({ job }: JobCardProps) {
   const handleDelete = async () => {
     setIsDeleting(true)
     try {
-      const res = await fetch(`/api/jobs/${job.id}`, {
+      // Optimistically navigate away
+      router.push('/')
+
+      // Delete in background
+      await fetch(`/api/jobs/${job.id}`, {
         method: 'DELETE',
       })
-
-      if (res.ok) {
-        router.refresh()
-      } else {
-        alert('Failed to delete job')
-      }
     } catch (error) {
-      alert('Error deleting job')
-    } finally {
+      console.error('Error deleting job')
       setIsDeleting(false)
     }
   }
@@ -40,7 +37,7 @@ export function JobCard({ job }: JobCardProps) {
   return (
     <>
       <div className="card hover:bg-surface-hover transition-colors mb-3 relative group cursor-pointer">
-        <Link href={`/jobs/${job.id}`} className="absolute inset-0 z-0" />
+        <Link href={`/jobs/${job.id}`} className="absolute inset-0 z-0" prefetch={true} />
 
         <div className="flex gap-3 relative pointer-events-none">
           {/* Company Avatar */}

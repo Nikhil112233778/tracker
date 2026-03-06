@@ -5,8 +5,7 @@ import { BottomNav } from '@/components/BottomNav'
 import { groupReminders, REMINDER_GROUP_COLORS, type ReminderGroup, type ReminderWithJob } from '@/lib/reminders'
 import { headers } from 'next/headers'
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
+export const revalidate = 10 // Revalidate every 10 seconds
 
 async function getReminders() {
   try {
@@ -16,7 +15,7 @@ async function getReminders() {
     const baseUrl = `${protocol}://${host}`
 
     const res = await fetch(`${baseUrl}/api/reminders`, {
-      cache: 'no-store',
+      next: { revalidate: 10 },
     })
 
     if (!res.ok) return []

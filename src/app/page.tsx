@@ -1,8 +1,7 @@
 import { DashboardClient } from '@/components/DashboardClient'
 import { headers } from 'next/headers'
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
+export const revalidate = 10 // Revalidate every 10 seconds
 
 async function getJobs() {
   try {
@@ -12,7 +11,7 @@ async function getJobs() {
     const baseUrl = `${protocol}://${host}`
 
     const res = await fetch(`${baseUrl}/api/jobs`, {
-      cache: 'no-store',
+      next: { revalidate: 10 },
     })
 
     if (!res.ok) {
@@ -31,7 +30,7 @@ async function getReminders() {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
     const res = await fetch(`${baseUrl}/api/reminders`, {
-      cache: 'no-store',
+      next: { revalidate: 10 },
     })
 
     if (!res.ok) return []

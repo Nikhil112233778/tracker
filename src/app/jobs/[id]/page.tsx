@@ -9,8 +9,7 @@ import { formatRelativeTime } from '@/lib/utils'
 import type { Job, Conversation, Reminder } from '@/lib/types'
 import { headers } from 'next/headers'
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
+export const revalidate = 10 // Revalidate every 10 seconds
 
 async function getJobDetails(id: string) {
   try {
@@ -20,7 +19,7 @@ async function getJobDetails(id: string) {
     const baseUrl = `${protocol}://${host}`
 
     const res = await fetch(`${baseUrl}/api/jobs/${id}`, {
-      cache: 'no-store',
+      next: { revalidate: 10 },
     })
 
     if (!res.ok) return null
@@ -41,7 +40,7 @@ async function getAllReminders() {
     const baseUrl = `${protocol}://${host}`
 
     const res = await fetch(`${baseUrl}/api/reminders`, {
-      cache: 'no-store',
+      next: { revalidate: 10 },
     })
 
     if (!res.ok) return []
