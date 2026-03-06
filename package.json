@@ -10,14 +10,16 @@
     "lint": "next lint",
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@libsql/client": "^0.17.0",
-    "@types/node": "^25.3.5",
+    "@serwist/next": "^9.5.6",
     "@types/react": "^19.2.14",
     "autoprefixer": "^10.4.27",
     "clsx": "^2.1.1",
@@ -29,14 +31,17 @@
     "postcss": "^8.5.8",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "serwist": "^9.5.6",
     "tailwind-merge": "^3.5.0",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/forms": "^0.5.11",
+    "@types/node": "^25.3.5",
     "@types/react-dom": "^19.2.3",
     "drizzle-kit": "^0.31.9",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.19"
   }
 }
-

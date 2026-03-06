@@ -1,6 +1,7 @@
 import { DM_Sans, DM_Mono } from 'next/font/google'
 import './globals.css'
 import { ToastContainer } from '@/components/Toast'
+import { PWAHandler } from '@/components/PWAHandler'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -17,7 +18,23 @@ const dmMono = DM_Mono({
 
 export const metadata = {
   title: 'Job Tracker',
-  description: 'Personal job search tracker',
+  description: 'Track your job applications, HR contacts, and follow-up reminders',
+  applicationName: 'Job Tracker',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Job Tracker',
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  themeColor: '#2563EB',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 }
 
 export default function RootLayout({
@@ -28,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${dmMono.variable}`}>
       <body className="bg-background font-sans antialiased">
+        <PWAHandler />
         {children}
         <ToastContainer />
       </body>

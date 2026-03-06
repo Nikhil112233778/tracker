@@ -1,0 +1,927 @@
+
+> job-tracker@1.0.0 test
+> playwright test
+
+
+Running 46 tests using 1 worker
+
+  x   1 [chromium] › tests\01-job-management.spec.ts:8:7 › Job/Lead Management (T01-T12) › T01: Create a new job with all fields (30.3s)
+  x   2 [chromium] › tests\01-job-management.spec.ts:28:7 › Job/Lead Management (T01-T12) › T02: Create job with only required fields (30.3s)
+  x   3 [chromium] › tests\01-job-management.spec.ts:42:7 › Job/Lead Management (T01-T12) › T03: Required field validation (30.3s)
+  x   4 [chromium] › tests\01-job-management.spec.ts:55:7 › Job/Lead Management (T01-T12) › T04: Email format validation (30.4s)
+  x   5 [chromium] › tests\01-job-management.spec.ts:69:7 › Job/Lead Management (T01-T12) › T05: Job appears on dashboard (30.4s)
+  x   6 [chromium] › tests\01-job-management.spec.ts:84:7 › Job/Lead Management (T01-T12) › T06: Edit an existing job (30.2s)
+  x   7 [chromium] › tests\01-job-management.spec.ts:105:7 › Job/Lead Management (T01-T12) › T07: Delete a job (30.2s)
+  ok  8 [chromium] › tests\01-job-management.spec.ts:124:7 › Job/Lead Management (T01-T12) › T10: Filter by status (3.7s)
+  ok  9 [chromium] › tests\01-job-management.spec.ts:140:7 › Job/Lead Management (T01-T12) › T11: Empty dashboard state (1.4s)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+| T01 | Create job with all fields | ❌ FAIL |
+
+**TOTAL**: 1 tests
+**PASSED**: 0 ✅
+**FAILED**: 1 ❌
+**SKIPPED**: 0 ⏭️
+  x  10 [chromium] › tests\all-tests.spec.ts:32:7 › Complete Test Suite - All 64 Test Cases › T01: Create job with all fields (30.2s)
+  ok 11 [chromium] › tests\all-tests.spec.ts:50:7 › Complete Test Suite - All 64 Test Cases › T02: Create job with only required fields (5.6s)
+  ok 12 [chromium] › tests\all-tests.spec.ts:65:7 › Complete Test Suite - All 64 Test Cases › T03: Required field validation (1.5s)
+  ok 13 [chromium] › tests\all-tests.spec.ts:77:7 › Complete Test Suite - All 64 Test Cases › T04: Email format validation (1.3s)
+  ok 14 [chromium] › tests\all-tests.spec.ts:94:7 › Complete Test Suite - All 64 Test Cases › T05: Job appears on dashboard (1.2s)
+  ok 15 [chromium] › tests\all-tests.spec.ts:105:7 › Complete Test Suite - All 64 Test Cases › T06-T12: Basic job operations (316ms)
+  ok 16 [chromium] › tests\all-tests.spec.ts:117:7 › Complete Test Suite - All 64 Test Cases › T13-T20: Conversation features (314ms)
+  ok 17 [chromium] › tests\all-tests.spec.ts:130:7 › Complete Test Suite - All 64 Test Cases › T21-T39: Reminder system (371ms)
+  ok 18 [chromium] › tests\all-tests.spec.ts:154:7 › Complete Test Suite - All 64 Test Cases › T40: Mobile viewport 375px (1.2s)
+  ok 19 [chromium] › tests\all-tests.spec.ts:166:7 › Complete Test Suite - All 64 Test Cases › T41: Mobile viewport 430px (1.1s)
+  ok 20 [chromium] › tests\all-tests.spec.ts:178:7 › Complete Test Suite - All 64 Test Cases › T42: Desktop viewport centered (1.2s)
+  ok 21 [chromium] › tests\all-tests.spec.ts:190:7 › Complete Test Suite - All 64 Test Cases › T43-T50: UI/UX features (205ms)
+  ok 22 [chromium] › tests\all-tests.spec.ts:203:7 › Complete Test Suite - All 64 Test Cases › T51-T60: Data integrity (312ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+| T02 | Create job with required fields only | ✅ PASS |
+| T03 | Required field validation | ❌ FAIL |
+| T04 | Email format validation | ❌ FAIL |
+| T05 | Job appears on dashboard | ✅ PASS |
+| T06 | Edit existing job | ⏭️ SKIP |
+| T07 | Delete job | ⏭️ SKIP |
+| T08 | Delete cascades data | ⏭️ SKIP |
+| T09 | Dashboard shows latest first | ⏭️ SKIP |
+| T10 | Filter by status | ⏭️ SKIP |
+| T11 | Empty dashboard state | ⏭️ SKIP |
+| T12 | Change job status | ⏭️ SKIP |
+| T13 | Add conversation | ⏭️ SKIP |
+| T14 | Conversation type selection | ⏭️ SKIP |
+| T15 | Date defaults to today | ⏭️ SKIP |
+| T16 | Conversation requires summary | ⏭️ SKIP |
+| T17 | Multiple conversations timeline | ⏭️ SKIP |
+| T18 | Last note on dashboard | ⏭️ SKIP |
+| T19 | Delete conversation | ⏭️ SKIP |
+| T20 | Long text handling | ⏭️ SKIP |
+| T21 | Set reminder | ⏭️ SKIP |
+| T22 | Reminder on dashboard banner | ⏭️ SKIP |
+| T23 | Reminder on /reminders page | ⏭️ SKIP |
+| T24 | Past date validation | ⏭️ SKIP |
+| T25 | Reminder note required | ⏭️ SKIP |
+| T26 | Mark reminder done | ⏭️ SKIP |
+| T27 | Snooze reminder | ⏭️ SKIP |
+| T28 | Edit reminder | ⏭️ SKIP |
+| T29 | One reminder per job | ⏭️ SKIP |
+| T30 | Bell badge count | ⏭️ SKIP |
+| T31 | Grouping - Overdue | ⏭️ SKIP |
+| T32 | Grouping - Today | ⏭️ SKIP |
+| T33 | Grouping - Tomorrow | ⏭️ SKIP |
+| T34 | Grouping - This Week | ⏭️ SKIP |
+| T35 | Grouping - Later | ⏭️ SKIP |
+| T36 | Reminders empty state | ⏭️ SKIP |
+| T37 | Browser notification | ⏭️ SKIP |
+| T38 | Notification permission | ⏭️ SKIP |
+| T39 | Reminder card navigation | ⏭️ SKIP |
+| T40 | Mobile viewport 375px | ✅ PASS |
+| T41 | Mobile viewport 430px | ✅ PASS |
+| T42 | Desktop viewport centered | ✅ PASS |
+| T43 | Filter pills scroll | ⏭️ SKIP |
+| T44 | Bottom sheet opens/closes | ⏭️ SKIP |
+| T45 | Bottom sheet swipe dismiss | ⏭️ SKIP |
+| T46 | FAB position | ⏭️ SKIP |
+| T47 | Long company name | ⏭️ SKIP |
+| T48 | Touch targets ≥48px | ⏭️ SKIP |
+| T49 | Loading skeleton | ⏭️ SKIP |
+| T50 | Toast auto-dismiss | ⏭️ SKIP |
+| T51 | Double-tap prevention | ⏭️ SKIP |
+| T52 | Special characters | ⏭️ SKIP |
+| T53 | Very long notes | ⏭️ SKIP |
+| T54 | Empty conversations | ⏭️ SKIP |
+| T55 | Back navigation | ⏭️ SKIP |
+| T56 | Refresh persistence | ⏭️ SKIP |
+| T57 | Delete only target job | ⏭️ SKIP |
+| T58 | API error handling | ⏭️ SKIP |
+| T59 | Concurrent reminders | ⏭️ SKIP |
+| T60 | Filter count accuracy | ⏭️ SKIP |
+| T61 | Add to home screen | ⏭️ SKIP |
+| T62 | Service worker | ⏭️ SKIP |
+| T63 | Notification denied gracefully | ⏭️ SKIP |
+| T64 | Offline indicator | ⏭️ SKIP |
+
+**TOTAL**: 63 tests
+**PASSED**: 5 ✅
+**FAILED**: 2 ❌
+**SKIPPED**: 56 ⏭️
+  ok 23 [chromium] › tests\all-tests.spec.ts:218:7 › Complete Test Suite - All 64 Test Cases › T61-T64: PWA features (263ms)
+  x  24 [mobile] › tests\01-job-management.spec.ts:8:7 › Job/Lead Management (T01-T12) › T01: Create a new job with all fields (5ms)
+  x  25 [mobile] › tests\01-job-management.spec.ts:28:7 › Job/Lead Management (T01-T12) › T02: Create job with only required fields (5ms)
+  x  26 [mobile] › tests\01-job-management.spec.ts:42:7 › Job/Lead Management (T01-T12) › T03: Required field validation (3ms)
+  x  27 [mobile] › tests\01-job-management.spec.ts:55:7 › Job/Lead Management (T01-T12) › T04: Email format validation (3ms)
+  x  28 [mobile] › tests\01-job-management.spec.ts:69:7 › Job/Lead Management (T01-T12) › T05: Job appears on dashboard (5ms)
+  x  29 [mobile] › tests\01-job-management.spec.ts:84:7 › Job/Lead Management (T01-T12) › T06: Edit an existing job (6ms)
+  x  30 [mobile] › tests\01-job-management.spec.ts:105:7 › Job/Lead Management (T01-T12) › T07: Delete a job (5ms)
+  x  31 [mobile] › tests\01-job-management.spec.ts:124:7 › Job/Lead Management (T01-T12) › T10: Filter by status (4ms)
+  x  32 [mobile] › tests\01-job-management.spec.ts:140:7 › Job/Lead Management (T01-T12) › T11: Empty dashboard state (5ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  33 [mobile] › tests\all-tests.spec.ts:32:7 › Complete Test Suite - All 64 Test Cases › T01: Create job with all fields (5ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  34 [mobile] › tests\all-tests.spec.ts:50:7 › Complete Test Suite - All 64 Test Cases › T02: Create job with only required fields (3ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  35 [mobile] › tests\all-tests.spec.ts:65:7 › Complete Test Suite - All 64 Test Cases › T03: Required field validation (5ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  36 [mobile] › tests\all-tests.spec.ts:77:7 › Complete Test Suite - All 64 Test Cases › T04: Email format validation (5ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  37 [mobile] › tests\all-tests.spec.ts:94:7 › Complete Test Suite - All 64 Test Cases › T05: Job appears on dashboard (3ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  38 [mobile] › tests\all-tests.spec.ts:105:7 › Complete Test Suite - All 64 Test Cases › T06-T12: Basic job operations (4ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  39 [mobile] › tests\all-tests.spec.ts:117:7 › Complete Test Suite - All 64 Test Cases › T13-T20: Conversation features (5ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  40 [mobile] › tests\all-tests.spec.ts:130:7 › Complete Test Suite - All 64 Test Cases › T21-T39: Reminder system (5ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  41 [mobile] › tests\all-tests.spec.ts:154:7 › Complete Test Suite - All 64 Test Cases › T40: Mobile viewport 375px (5ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  42 [mobile] › tests\all-tests.spec.ts:166:7 › Complete Test Suite - All 64 Test Cases › T41: Mobile viewport 430px (6ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  43 [mobile] › tests\all-tests.spec.ts:178:7 › Complete Test Suite - All 64 Test Cases › T42: Desktop viewport centered (6ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  44 [mobile] › tests\all-tests.spec.ts:190:7 › Complete Test Suite - All 64 Test Cases › T43-T50: UI/UX features (5ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  45 [mobile] › tests\all-tests.spec.ts:203:7 › Complete Test Suite - All 64 Test Cases › T51-T60: Data integrity (5ms)
+
+
+========== TEST SUMMARY ==========
+
+| Test ID | Test Name | Status |
+|---------|-----------|--------|
+
+**TOTAL**: 0 tests
+**PASSED**: 0 ✅
+**FAILED**: 0 ❌
+**SKIPPED**: 0 ⏭️
+  x  46 [mobile] › tests\all-tests.spec.ts:218:7 › Complete Test Suite - All 64 Test Cases › T61-T64: PWA features (4ms)
+
+
+  1) [chromium] › tests\01-job-management.spec.ts:8:7 › Job/Lead Management (T01-T12) › T01: Create a new job with all fields 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('a[href="/jobs/new"]')[22m
+    [2m    - locator resolved to <a href="/jobs/new">…</a>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    54 × waiting for element to be visible, enabled and stable[22m
+    [2m       - element is not visible[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+
+
+       7 |
+       8 |   test('T01: Create a new job with all fields', async ({ page }) => {
+    >  9 |     await page.click('a[href="/jobs/new"]')
+         |                ^
+      10 |
+      11 |     await page.fill('input[name="company"]', 'TechCorp Inc')
+      12 |     await page.fill('input[name="role"]', 'Senior Frontend Developer')
+        at C:\Users\hp\job-tracker\tests\01-job-management.spec.ts:9:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\01-job-management-Job-Lead-ae147-e-a-new-job-with-all-fields-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\01-job-management-Job-Lead-ae147-e-a-new-job-with-all-fields-chromium\error-context.md
+
+  2) [chromium] › tests\01-job-management.spec.ts:28:7 › Job/Lead Management (T01-T12) › T02: Create job with only required fields 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('a[href="/jobs/new"]')[22m
+    [2m    - locator resolved to <a href="/jobs/new">…</a>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    53 × waiting for element to be visible, enabled and stable[22m
+    [2m       - element is not visible[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+
+
+      27 |
+      28 |   test('T02: Create job with only required fields', async ({ page }) => {
+    > 29 |     await page.click('a[href="/jobs/new"]')
+         |                ^
+      30 |
+      31 |     await page.fill('input[name="company"]', 'MinimalCo')
+      32 |     await page.fill('input[name="role"]', 'Developer')
+        at C:\Users\hp\job-tracker\tests\01-job-management.spec.ts:29:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\01-job-management-Job-Lead-a0f65-b-with-only-required-fields-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\01-job-management-Job-Lead-a0f65-b-with-only-required-fields-chromium\error-context.md
+
+  3) [chromium] › tests\01-job-management.spec.ts:42:7 › Job/Lead Management (T01-T12) › T03: Required field validation 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('a[href="/jobs/new"]')[22m
+    [2m    - locator resolved to <a href="/jobs/new">…</a>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    54 × waiting for element to be visible, enabled and stable[22m
+    [2m       - element is not visible[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+
+
+      41 |
+      42 |   test('T03: Required field validation', async ({ page }) => {
+    > 43 |     await page.click('a[href="/jobs/new"]')
+         |                ^
+      44 |
+      45 |     await page.fill('input[name="role"]', 'Developer')
+      46 |     await page.fill('input[name="hr_name"]', 'John Doe')
+        at C:\Users\hp\job-tracker\tests\01-job-management.spec.ts:43:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\01-job-management-Job-Lead-6e546-3-Required-field-validation-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\01-job-management-Job-Lead-6e546-3-Required-field-validation-chromium\error-context.md
+
+  4) [chromium] › tests\01-job-management.spec.ts:55:7 › Job/Lead Management (T01-T12) › T04: Email format validation 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('a[href="/jobs/new"]')[22m
+    [2m    - locator resolved to <a href="/jobs/new">…</a>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    54 × waiting for element to be visible, enabled and stable[22m
+    [2m       - element is not visible[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+
+
+      54 |
+      55 |   test('T04: Email format validation', async ({ page }) => {
+    > 56 |     await page.click('a[href="/jobs/new"]')
+         |                ^
+      57 |
+      58 |     await page.fill('input[name="company"]', 'TestCo')
+      59 |     await page.fill('input[name="role"]', 'Developer')
+        at C:\Users\hp\job-tracker\tests\01-job-management.spec.ts:56:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\01-job-management-Job-Lead-7ecf2-T04-Email-format-validation-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\01-job-management-Job-Lead-7ecf2-T04-Email-format-validation-chromium\error-context.md
+
+  5) [chromium] › tests\01-job-management.spec.ts:69:7 › Job/Lead Management (T01-T12) › T05: Job appears on dashboard 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('a[href="/jobs/new"]')[22m
+    [2m    - locator resolved to <a href="/jobs/new">…</a>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    54 × waiting for element to be visible, enabled and stable[22m
+    [2m       - element is not visible[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+
+
+      68 |
+      69 |   test('T05: Job appears on dashboard', async ({ page }) => {
+    > 70 |     await page.click('a[href="/jobs/new"]')
+         |                ^
+      71 |
+      72 |     await page.fill('input[name="company"]', 'DashboardTest Co')
+      73 |     await page.fill('input[name="role"]', 'Tester')
+        at C:\Users\hp\job-tracker\tests\01-job-management.spec.ts:70:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\01-job-management-Job-Lead-ddad9-05-Job-appears-on-dashboard-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\01-job-management-Job-Lead-ddad9-05-Job-appears-on-dashboard-chromium\error-context.md
+
+  6) [chromium] › tests\01-job-management.spec.ts:84:7 › Job/Lead Management (T01-T12) › T06: Edit an existing job 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('a[href="/jobs/new"]')[22m
+    [2m    - locator resolved to <a href="/jobs/new">…</a>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    54 × waiting for element to be visible, enabled and stable[22m
+    [2m       - element is not visible[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+
+
+      84 |   test('T06: Edit an existing job', async ({ page }) => {
+      85 |     // Create a job first
+    > 86 |     await page.click('a[href="/jobs/new"]')
+         |                ^
+      87 |     await page.fill('input[name="company"]', 'EditTest Co')
+      88 |     await page.fill('input[name="role"]', 'Original Role')
+      89 |     await page.fill('input[name="hr_name"]', 'Test HR')
+        at C:\Users\hp\job-tracker\tests\01-job-management.spec.ts:86:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\01-job-management-Job-Lead-cfd59-12-T06-Edit-an-existing-job-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\01-job-management-Job-Lead-cfd59-12-T06-Edit-an-existing-job-chromium\error-context.md
+
+  7) [chromium] › tests\01-job-management.spec.ts:105:7 › Job/Lead Management (T01-T12) › T07: Delete a job 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('a[href="/jobs/new"]')[22m
+    [2m    - locator resolved to <a href="/jobs/new">…</a>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    35 × waiting for element to be visible, enabled and stable[22m
+    [2m       - element is not visible[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+    [2m    - waiting for" http://localhost:3000/" navigation to finish...[22m
+    [2m    - navigated to "http://localhost:3000/"[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+    [2m  - element was detached from the DOM, retrying[22m
+    [2m    - locator resolved to <a href="/jobs/new">…</a>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    9 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 500ms[22m
+
+
+      105 |   test('T07: Delete a job', async ({ page }) => {
+      106 |     // Create a job
+    > 107 |     await page.click('a[href="/jobs/new"]')
+          |                ^
+      108 |     await page.fill('input[name="company"]', 'DeleteTest Co')
+      109 |     await page.fill('input[name="role"]', 'To Be Deleted')
+      110 |     await page.fill('input[name="hr_name"]', 'Test HR')
+        at C:\Users\hp\job-tracker\tests\01-job-management.spec.ts:107:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\01-job-management-Job-Lead-d42c2-nt-T01-T12-T07-Delete-a-job-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\01-job-management-Job-Lead-d42c2-nt-T01-T12-T07-Delete-a-job-chromium\error-context.md
+
+  8) [chromium] › tests\all-tests.spec.ts:32:7 › Complete Test Suite - All 64 Test Cases › T01: Create job with all fields 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('a[href="/jobs/new"]')[22m
+    [2m    - locator resolved to <a href="/jobs/new">…</a>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not visible[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    55 × waiting for element to be visible, enabled and stable[22m
+    [2m       - element is not visible[22m
+    [2m     - retrying click action[22m
+    [2m       - waiting 500ms[22m
+
+
+      33 |     try {
+      34 |       await page.goto('/')
+    > 35 |       await page.click('a[href="/jobs/new"]')
+         |                  ^
+      36 |       await page.fill('input[name="company"]', 'TechCorp')
+      37 |       await page.fill('input[name="role"]', 'Senior Developer')
+      38 |       await page.fill('input[name="hr_name"]', 'Jane Smith')
+        at C:\Users\hp\job-tracker\tests\all-tests.spec.ts:35:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\all-tests-Complete-Test-Su-6362b--Create-job-with-all-fields-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\all-tests-Complete-Test-Su-6362b--Create-job-with-all-fields-chromium\error-context.md
+
+  9) [mobile] › tests\01-job-management.spec.ts:8:7 › Job/Lead Management (T01-T12) › T01: Create a new job with all fields 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  10) [mobile] › tests\01-job-management.spec.ts:28:7 › Job/Lead Management (T01-T12) › T02: Create job with only required fields 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  11) [mobile] › tests\01-job-management.spec.ts:42:7 › Job/Lead Management (T01-T12) › T03: Required field validation 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  12) [mobile] › tests\01-job-management.spec.ts:55:7 › Job/Lead Management (T01-T12) › T04: Email format validation 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  13) [mobile] › tests\01-job-management.spec.ts:69:7 › Job/Lead Management (T01-T12) › T05: Job appears on dashboard 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  14) [mobile] › tests\01-job-management.spec.ts:84:7 › Job/Lead Management (T01-T12) › T06: Edit an existing job 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  15) [mobile] › tests\01-job-management.spec.ts:105:7 › Job/Lead Management (T01-T12) › T07: Delete a job 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  16) [mobile] › tests\01-job-management.spec.ts:124:7 › Job/Lead Management (T01-T12) › T10: Filter by status 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  17) [mobile] › tests\01-job-management.spec.ts:140:7 › Job/Lead Management (T01-T12) › T11: Empty dashboard state 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  18) [mobile] › tests\all-tests.spec.ts:32:7 › Complete Test Suite - All 64 Test Cases › T01: Create job with all fields 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  19) [mobile] › tests\all-tests.spec.ts:50:7 › Complete Test Suite - All 64 Test Cases › T02: Create job with only required fields 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  20) [mobile] › tests\all-tests.spec.ts:65:7 › Complete Test Suite - All 64 Test Cases › T03: Required field validation 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  21) [mobile] › tests\all-tests.spec.ts:77:7 › Complete Test Suite - All 64 Test Cases › T04: Email format validation 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  22) [mobile] › tests\all-tests.spec.ts:94:7 › Complete Test Suite - All 64 Test Cases › T05: Job appears on dashboard 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  23) [mobile] › tests\all-tests.spec.ts:105:7 › Complete Test Suite - All 64 Test Cases › T06-T12: Basic job operations 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  24) [mobile] › tests\all-tests.spec.ts:117:7 › Complete Test Suite - All 64 Test Cases › T13-T20: Conversation features 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  25) [mobile] › tests\all-tests.spec.ts:130:7 › Complete Test Suite - All 64 Test Cases › T21-T39: Reminder system 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  26) [mobile] › tests\all-tests.spec.ts:154:7 › Complete Test Suite - All 64 Test Cases › T40: Mobile viewport 375px 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  27) [mobile] › tests\all-tests.spec.ts:166:7 › Complete Test Suite - All 64 Test Cases › T41: Mobile viewport 430px 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  28) [mobile] › tests\all-tests.spec.ts:178:7 › Complete Test Suite - All 64 Test Cases › T42: Desktop viewport centered 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  29) [mobile] › tests\all-tests.spec.ts:190:7 › Complete Test Suite - All 64 Test Cases › T43-T50: UI/UX features 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  30) [mobile] › tests\all-tests.spec.ts:203:7 › Complete Test Suite - All 64 Test Cases › T51-T60: Data integrity 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  31) [mobile] › tests\all-tests.spec.ts:218:7 › Complete Test Suite - All 64 Test Cases › T61-T64: PWA features 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\hp\AppData\Local\ms-playwright\webkit-2248\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+
+  31 failed
+    [chromium] › tests\01-job-management.spec.ts:8:7 › Job/Lead Management (T01-T12) › T01: Create a new job with all fields 
+    [chromium] › tests\01-job-management.spec.ts:28:7 › Job/Lead Management (T01-T12) › T02: Create job with only required fields 
+    [chromium] › tests\01-job-management.spec.ts:42:7 › Job/Lead Management (T01-T12) › T03: Required field validation 
+    [chromium] › tests\01-job-management.spec.ts:55:7 › Job/Lead Management (T01-T12) › T04: Email format validation 
+    [chromium] › tests\01-job-management.spec.ts:69:7 › Job/Lead Management (T01-T12) › T05: Job appears on dashboard 
+    [chromium] › tests\01-job-management.spec.ts:84:7 › Job/Lead Management (T01-T12) › T06: Edit an existing job 
+    [chromium] › tests\01-job-management.spec.ts:105:7 › Job/Lead Management (T01-T12) › T07: Delete a job 
+    [chromium] › tests\all-tests.spec.ts:32:7 › Complete Test Suite - All 64 Test Cases › T01: Create job with all fields 
+    [mobile] › tests\01-job-management.spec.ts:8:7 › Job/Lead Management (T01-T12) › T01: Create a new job with all fields 
+    [mobile] › tests\01-job-management.spec.ts:28:7 › Job/Lead Management (T01-T12) › T02: Create job with only required fields 
+    [mobile] › tests\01-job-management.spec.ts:42:7 › Job/Lead Management (T01-T12) › T03: Required field validation 
+    [mobile] › tests\01-job-management.spec.ts:55:7 › Job/Lead Management (T01-T12) › T04: Email format validation 
+    [mobile] › tests\01-job-management.spec.ts:69:7 › Job/Lead Management (T01-T12) › T05: Job appears on dashboard 
+    [mobile] › tests\01-job-management.spec.ts:84:7 › Job/Lead Management (T01-T12) › T06: Edit an existing job 
+    [mobile] › tests\01-job-management.spec.ts:105:7 › Job/Lead Management (T01-T12) › T07: Delete a job 
+    [mobile] › tests\01-job-management.spec.ts:124:7 › Job/Lead Management (T01-T12) › T10: Filter by status 
+    [mobile] › tests\01-job-management.spec.ts:140:7 › Job/Lead Management (T01-T12) › T11: Empty dashboard state 
+    [mobile] › tests\all-tests.spec.ts:32:7 › Complete Test Suite - All 64 Test Cases › T01: Create job with all fields 
+    [mobile] › tests\all-tests.spec.ts:50:7 › Complete Test Suite - All 64 Test Cases › T02: Create job with only required fields 
+    [mobile] › tests\all-tests.spec.ts:65:7 › Complete Test Suite - All 64 Test Cases › T03: Required field validation 
+    [mobile] › tests\all-tests.spec.ts:77:7 › Complete Test Suite - All 64 Test Cases › T04: Email format validation 
+    [mobile] › tests\all-tests.spec.ts:94:7 › Complete Test Suite - All 64 Test Cases › T05: Job appears on dashboard 
+    [mobile] › tests\all-tests.spec.ts:105:7 › Complete Test Suite - All 64 Test Cases › T06-T12: Basic job operations 
+    [mobile] › tests\all-tests.spec.ts:117:7 › Complete Test Suite - All 64 Test Cases › T13-T20: Conversation features 
+    [mobile] › tests\all-tests.spec.ts:130:7 › Complete Test Suite - All 64 Test Cases › T21-T39: Reminder system 
+    [mobile] › tests\all-tests.spec.ts:154:7 › Complete Test Suite - All 64 Test Cases › T40: Mobile viewport 375px 
+    [mobile] › tests\all-tests.spec.ts:166:7 › Complete Test Suite - All 64 Test Cases › T41: Mobile viewport 430px 
+    [mobile] › tests\all-tests.spec.ts:178:7 › Complete Test Suite - All 64 Test Cases › T42: Desktop viewport centered 
+    [mobile] › tests\all-tests.spec.ts:190:7 › Complete Test Suite - All 64 Test Cases › T43-T50: UI/UX features 
+    [mobile] › tests\all-tests.spec.ts:203:7 › Complete Test Suite - All 64 Test Cases › T51-T60: Data integrity 
+    [mobile] › tests\all-tests.spec.ts:218:7 › Complete Test Suite - All 64 Test Cases › T61-T64: PWA features 
+  15 passed (6.2m)

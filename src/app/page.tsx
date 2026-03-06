@@ -1,6 +1,7 @@
 import { JobCard } from '@/components/JobCard'
 import { FAB } from '@/components/FAB'
 import { EmptyState } from '@/components/EmptyState'
+import { DashboardNotifications } from '@/components/DashboardNotifications'
 import Link from 'next/link'
 import type { Job } from '@/lib/types'
 
@@ -87,6 +88,9 @@ export default async function Dashboard() {
             )}
           </div>
         </header>
+
+        {/* PWA Notifications */}
+        <DashboardNotifications />
 
         {/* Job List or Empty State */}
         {hasJobs ? (
