@@ -56,9 +56,9 @@ export default async function JobDetailPage({
     <div className="min-h-screen bg-background pb-24">
       <div className="max-w-md mx-auto">
         {/* Top Bar */}
-        <div className="sticky top-0 bg-background z-10 px-4 py-3 flex items-center justify-between border-b border-gray-100">
+        <div className="sticky top-0 bg-background z-10 px-4 py-3 flex items-center justify-between border-b border-border">
           <Link href="/">
-            <button className="p-2 -ml-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <button className="p-2 -ml-2 hover:bg-surface-hover rounded-lg transition-colors text-text-primary">
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -76,7 +76,7 @@ export default async function JobDetailPage({
           </Link>
           <StatusPill status={job.status} />
           <Link href={`/jobs/${id}/edit`}>
-            <button className="p-2 -mr-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <button className="p-2 -mr-2 hover:bg-surface-hover rounded-lg transition-colors text-text-primary">
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -99,10 +99,10 @@ export default async function JobDetailPage({
           <div className="flex justify-center mb-4">
             <Avatar company={job.company} size="lg" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">
+          <h1 className="text-2xl font-bold text-text-primary mb-1">
             {job.company}
           </h1>
-          <p className="text-gray-600">{job.role}</p>
+          <p className="text-text-secondary">{job.role}</p>
         </div>
 
         <div className="px-4 space-y-4">
@@ -125,8 +125,8 @@ export default async function JobDetailPage({
                 </svg>
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-gray-900">{job.hr_name}</h3>
-                <p className="text-sm text-gray-500 mb-2">
+                <h3 className="font-semibold text-text-primary">{job.hr_name}</h3>
+                <p className="text-sm text-text-secondary mb-2">
                   Last contact: {formatRelativeTime(lastContactDate)}
                 </p>
                 {job.hr_email && (
@@ -154,26 +154,26 @@ export default async function JobDetailPage({
             <div className="card space-y-3">
               {job.source && (
                 <div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">
+                  <div className="text-xs text-text-muted uppercase tracking-wide mb-1">
                     Source
                   </div>
-                  <div className="text-sm text-gray-900">{job.source}</div>
+                  <div className="text-sm text-text-primary">{job.source}</div>
                 </div>
               )}
               {job.salary_info && (
                 <div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">
+                  <div className="text-xs text-text-muted uppercase tracking-wide mb-1">
                     Salary Info
                   </div>
-                  <div className="text-sm text-gray-900">{job.salary_info}</div>
+                  <div className="text-sm text-text-primary">{job.salary_info}</div>
                 </div>
               )}
               {job.notes && (
                 <div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">
+                  <div className="text-xs text-text-muted uppercase tracking-wide mb-1">
                     Notes
                   </div>
-                  <div className="text-sm text-gray-900 whitespace-pre-wrap">
+                  <div className="text-sm text-text-primary whitespace-pre-wrap">
                     {job.notes}
                   </div>
                 </div>
@@ -185,15 +185,15 @@ export default async function JobDetailPage({
           {reminder && (
             <div
               className="card border-2"
-              style={{ borderColor: '#D97706', backgroundColor: '#FFFBEB' }}
+              style={{ borderColor: '#D97706', backgroundColor: '#78350F20' }}
             >
               <div className="flex items-start gap-3">
                 <span className="text-2xl">⏰</span>
                 <div className="flex-1">
-                  <div className="font-semibold text-gray-900 mb-1">
+                  <div className="font-semibold text-text-primary mb-1">
                     {reminder.note}
                   </div>
-                  <div className="text-sm text-gray-600 font-mono">
+                  <div className="text-sm text-text-secondary font-mono">
                     {new Date(reminder.reminder_date).toLocaleString('en-US', {
                       month: 'short',
                       day: 'numeric',
@@ -210,10 +210,10 @@ export default async function JobDetailPage({
           {/* Timeline */}
           <div>
             <div className="flex items-center justify-between mb-3">
-              <h2 className="text-xs uppercase tracking-wide text-gray-500 font-semibold">
+              <h2 className="text-xs uppercase tracking-wide text-text-muted font-semibold">
                 Timeline
               </h2>
-              <span className="text-xs text-gray-500 font-mono">
+              <span className="text-xs text-text-muted font-mono">
                 {conversations.length} update{conversations.length !== 1 ? 's' : ''}
               </span>
             </div>

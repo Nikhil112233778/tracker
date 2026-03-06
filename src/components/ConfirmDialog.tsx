@@ -21,7 +21,7 @@ export function ConfirmDialog({
   message,
   confirmText = 'Confirm',
   cancelText = 'Cancel',
-  confirmButtonClass = 'bg-accent hover:bg-accent-hover',
+  confirmButtonClass = 'btn-primary',
 }: ConfirmDialogProps) {
   const handleConfirm = () => {
     onConfirm()
@@ -38,7 +38,7 @@ export function ConfirmDialog({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           >
             {/* Dialog */}
             <motion.div
@@ -46,10 +46,10 @@ export function ConfirmDialog({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6"
+              className="bg-surface rounded-2xl border border-border shadow-2xl max-w-sm w-full p-6"
             >
-              <h2 className="text-xl font-bold text-gray-900 mb-2">{title}</h2>
-              <p className="text-gray-600 mb-6">{message}</p>
+              <h2 className="text-xl font-bold text-text-primary mb-2">{title}</h2>
+              <p className="text-text-secondary mb-6">{message}</p>
 
               <div className="flex gap-3">
                 <button
@@ -60,7 +60,7 @@ export function ConfirmDialog({
                 </button>
                 <button
                   onClick={handleConfirm}
-                  className={`flex-1 text-white font-semibold rounded-button h-12 px-6 active:scale-[0.98] transition-all ${confirmButtonClass}`}
+                  className={`flex-1 ${confirmButtonClass}`}
                 >
                   {confirmText}
                 </button>

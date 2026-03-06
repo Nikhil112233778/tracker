@@ -61,8 +61,8 @@ export default async function Dashboard() {
         <header className="mb-6">
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Job Tracker</h1>
-              <p className="text-sm text-gray-600 mt-1">
+              <h1 className="text-3xl font-bold text-text-primary">Job Tracker</h1>
+              <p className="text-sm text-text-secondary mt-1">
                 {hasJobs
                   ? `${jobs.length} active${reminderCount > 0 ? ` · ${reminderCount} reminder${reminderCount > 1 ? 's' : ''}` : ''}`
                   : 'Track your job applications'}
@@ -70,7 +70,7 @@ export default async function Dashboard() {
             </div>
             {reminderCount > 0 && (
               <Link href="/reminders">
-                <button className="relative p-2 text-gray-600 hover:text-accent transition-colors">
+                <button className="relative p-2 text-text-secondary hover:text-accent transition-colors">
                   <svg
                     className="w-6 h-6"
                     fill="none"

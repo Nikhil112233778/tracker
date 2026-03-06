@@ -39,9 +39,9 @@ export default async function RemindersPage() {
     <div className="min-h-screen bg-background pb-8">
       <div className="max-w-md mx-auto">
         {/* Header */}
-        <div className="sticky top-0 bg-background z-10 px-4 py-3 flex items-center border-b border-gray-100">
+        <div className="sticky top-0 bg-background z-10 px-4 py-3 flex items-center border-b border-border">
           <Link href="/">
-            <button className="p-2 -ml-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <button className="p-2 -ml-2 hover:bg-surface-hover rounded-lg transition-colors text-text-primary">
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -57,9 +57,9 @@ export default async function RemindersPage() {
               </svg>
             </button>
           </Link>
-          <h1 className="text-lg font-semibold ml-2">Reminders</h1>
+          <h1 className="text-lg font-semibold ml-2 text-text-primary">Reminders</h1>
           {hasReminders && (
-            <span className="ml-auto text-sm text-gray-500">
+            <span className="ml-auto text-sm text-text-secondary">
               {reminders.length} reminder{reminders.length !== 1 ? 's' : ''}
             </span>
           )}
