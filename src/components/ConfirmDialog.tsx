@@ -38,18 +38,20 @@ export function ConfirmDialog({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-5"
           >
             {/* Dialog */}
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
+              initial={{ scale: 0.96, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
+              exit={{ scale: 0.96, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-surface rounded-2xl border border-border shadow-2xl max-w-sm w-full p-6"
+              className="bg-surface-elevated rounded-card border border-border shadow-elevated max-w-sm w-full p-6"
             >
-              <h2 className="text-xl font-bold text-text-primary mb-2">{title}</h2>
-              <p className="text-text-secondary mb-6">{message}</p>
+              <h2 className="text-[17px] font-bold text-text-primary mb-2 tracking-tight">
+                {title}
+              </h2>
+              <p className="text-[13px] text-text-secondary mb-6 leading-relaxed">{message}</p>
 
               <div className="flex gap-3">
                 <button

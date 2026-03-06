@@ -12,10 +12,12 @@ export function EmptyState({
   action,
 }: EmptyStateProps) {
   return (
-    <div className="card text-center py-12">
-      <div className="text-5xl mb-4">{icon}</div>
-      <h2 className="text-xl font-semibold mb-2 text-text-primary">{title}</h2>
-      <p className="text-text-secondary mb-6">{description}</p>
+    <div className="card text-center py-16">
+      <div className="text-6xl mb-6 opacity-80">{icon}</div>
+      <h2 className="text-[17px] font-semibold mb-2 text-text-primary tracking-tight">
+        {title}
+      </h2>
+      <p className="text-[13px] text-text-muted mb-8 leading-relaxed">{description}</p>
       {action}
     </div>
   )

@@ -36,23 +36,23 @@ export function JobCard({ job }: JobCardProps) {
 
   return (
     <>
-      <div className="card hover:bg-surface-hover transition-colors mb-3 relative group cursor-pointer">
+      <div className="card mb-4 relative group cursor-pointer">
         <Link href={`/jobs/${job.id}`} className="absolute inset-0 z-0" prefetch={true} />
 
-        <div className="flex gap-3 relative pointer-events-none">
+        <div className="flex gap-4 relative pointer-events-none">
           {/* Company Avatar */}
           <Avatar company={job.company} size="sm" />
 
           {/* Content */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-2 mb-1">
+            <div className="flex items-start justify-between gap-3 mb-2">
               <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-text-primary truncate">
+                <h3 className="font-semibold text-[15px] text-text-primary truncate leading-tight mb-1">
                   {job.company}
                 </h3>
-                <p className="text-sm text-text-secondary truncate">{job.role}</p>
+                <p className="text-[13px] text-text-secondary truncate">{job.role}</p>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-shrink-0">
                 <StatusPill status={job.status} />
                 {/* Delete Button */}
                 <button
@@ -62,7 +62,7 @@ export function JobCard({ job }: JobCardProps) {
                     setShowDeleteDialog(true)
                   }}
                   disabled={isDeleting}
-                  className="opacity-0 group-hover:opacity-100 p-2 hover:bg-red-500/20 rounded-lg transition-all relative z-20 pointer-events-auto"
+                  className="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-red-500/15 rounded-lg transition-all relative z-20 pointer-events-auto"
                   title="Delete job"
                 >
                   <svg
@@ -84,14 +84,14 @@ export function JobCard({ job }: JobCardProps) {
 
             {/* Last conversation preview */}
             {job.lastConversation && (
-              <p className="text-sm text-text-muted truncate mt-2">
+              <p className="text-[13px] text-text-muted truncate mt-3 leading-relaxed">
                 {job.lastConversation.summary}
               </p>
             )}
 
             {/* Footer */}
-            <div className="flex items-center justify-between mt-3 text-xs">
-              <span className="text-text-secondary">{job.hr_name}</span>
+            <div className="flex items-center justify-between mt-4 text-[12px]">
+              <span className="text-text-secondary font-medium">{job.hr_name}</span>
               <span className="text-text-muted font-mono">
                 {formatRelativeTime(job.updated_at)}
               </span>

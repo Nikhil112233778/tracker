@@ -9,10 +9,11 @@ export function StatusPill({ status }: StatusPillProps) {
 
   return (
     <span
-      className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium font-mono"
+      className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-semibold font-mono uppercase tracking-wide border"
       style={{
         color: config.color,
         backgroundColor: config.bg,
+        borderColor: `${config.color}30`,
       }}
     >
       {status}

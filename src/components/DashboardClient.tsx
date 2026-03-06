@@ -27,13 +27,15 @@ export function DashboardClient({ jobs, reminderCount }: DashboardClientProps) {
 
   return (
     <div className="min-h-screen pb-28">
-      <div className="max-w-md mx-auto p-4">
+      <div className="max-w-md mx-auto px-5 py-6">
         {/* Header */}
-        <header className="mb-6">
-          <div className="flex items-start justify-between mb-4">
+        <header className="mb-8">
+          <div className="flex items-start justify-between mb-6">
             <div>
-              <h1 className="text-3xl font-bold text-text-primary">Job Tracker</h1>
-              <p className="text-sm text-text-secondary mt-1">
+              <h1 className="text-[28px] font-bold text-text-primary tracking-tight mb-1.5">
+                Job Tracker
+              </h1>
+              <p className="text-[13px] text-text-secondary font-medium">
                 {hasJobs
                   ? `${jobs.length} job${jobs.length !== 1 ? 's' : ''}${reminderCount > 0 ? ` · ${reminderCount} reminder${reminderCount > 1 ? 's' : ''}` : ''}`
                   : 'Track your job applications'}
@@ -43,7 +45,7 @@ export function DashboardClient({ jobs, reminderCount }: DashboardClientProps) {
 
           {/* Filter */}
           {hasJobs && (
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-3">
               <StatusFilter
                 selectedStatus={selectedStatus}
                 onStatusChange={setSelectedStatus}
@@ -51,9 +53,9 @@ export function DashboardClient({ jobs, reminderCount }: DashboardClientProps) {
               {selectedStatus !== 'All' && (
                 <button
                   onClick={() => setSelectedStatus('All')}
-                  className="text-sm text-text-secondary hover:text-accent transition-colors"
+                  className="text-[13px] font-medium text-text-secondary hover:text-accent transition-colors"
                 >
-                  Clear filter
+                  Clear
                 </button>
               )}
             </div>
