@@ -10,7 +10,13 @@ const withSerwist = withSerwistInit({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Webpack alias for libsql client compatibility
+  // Turbopack config (required for Next.js 16)
+  turbopack: {
+    resolveAlias: {
+      '@libsql/client': '@libsql/client/node',
+    },
+  },
+  // Webpack alias for libsql client compatibility (fallback)
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.resolve.alias = {
