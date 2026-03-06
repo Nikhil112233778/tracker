@@ -5,6 +5,9 @@ import { DashboardNotifications } from '@/components/DashboardNotifications'
 import Link from 'next/link'
 import type { Job } from '@/lib/types'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 async function getJobs() {
   try {
     // In production, this would be an external API call

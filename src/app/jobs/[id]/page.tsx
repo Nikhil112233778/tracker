@@ -7,6 +7,9 @@ import { JobDetailActions } from '@/components/JobDetailActions'
 import { formatRelativeTime } from '@/lib/utils'
 import type { Job, Conversation, Reminder } from '@/lib/types'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 async function getJobDetails(id: string) {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
