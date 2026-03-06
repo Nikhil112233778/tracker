@@ -10,6 +10,8 @@ const withSerwist = withSerwistInit({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Explicitly set output for Vercel serverless
+  output: 'standalone',
   // Turbopack config (required for Next.js 16)
   turbopack: {
     resolveAlias: {
