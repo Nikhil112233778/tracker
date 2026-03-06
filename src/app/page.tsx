@@ -2,6 +2,7 @@ import { JobCard } from '@/components/JobCard'
 import { FAB } from '@/components/FAB'
 import { EmptyState } from '@/components/EmptyState'
 import Link from 'next/link'
+import type { Job } from '@/lib/types'
 
 async function getJobs() {
   try {
@@ -90,7 +91,7 @@ export default async function Dashboard() {
         {/* Job List or Empty State */}
         {hasJobs ? (
           <div>
-            {jobs.map((job) => (
+            {jobs.map((job: Job) => (
               <JobCard key={job.id} job={job} />
             ))}
           </div>
